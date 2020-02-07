@@ -4,13 +4,14 @@ require_relative('../models/stock')
 
 require("pry-byebug")
 
-Supplier.delete_all()
-Product.delete_all()
-Stock.delete_all()
+# Stock.delete_all()
+# Product.delete_all()
+# Supplier.delete_all()
+
 
   supplier1 = Supplier.new({
     "name" => "Mercedes",
-    "contact details" =>
+    "contact" =>
         "Mercedes-Benz Cars UK Ltd
          Tel: 08081 565 635" })
   supplier1.save
@@ -24,7 +25,7 @@ Stock.delete_all()
     "supplier_id" => 1,
     "cost" => 21000,
     "retail" => 39000 })
-  product1.save
+  product1.save==
 
 
 
@@ -33,9 +34,6 @@ Stock.delete_all()
     "quantity" => 2,
     "colour" => "silverx1 redx1" })
   stock1.save
-
-
-
 
 
 

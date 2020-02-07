@@ -6,14 +6,14 @@ DROP TABLE stocks;
 CREATE TABLE suppliers (
   id SERIAL primary key,
   name varchar(255),
-  contact_details text
+  contact text
 );
 
 CREATE TABLE products (
   id SERIAL primary key,
   name varchar(255),
-  description text
-  supplier_id INT REFERENCES supplier(id),
+  description text,
+  supplier_id INT REFERENCES suppliers(id),
   cost INT,
   retail INT
 );
