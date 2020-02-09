@@ -1,0 +1,7 @@
+require( 'sinatra' )
+require( 'sinatra/contrib/all' )
+require( 'pry-byebug' )
+require_relative( '../models/supplier.rb' )
+require_relative( '../models/product.rb' )
+require_relative( '../models/stock.rb' )
+also_reload( '../models/*' )

@@ -3,13 +3,15 @@ DROP TABLE products;
 DROP TABLE stocks;
 
 
-CREATE TABLE suppliers (
+CREATE TABLE suppliers
+(
   id SERIAL primary key,
   name varchar(255),
-  contact text
+  contact varchar(255)
 );
 
-CREATE TABLE products (
+CREATE TABLE products
+(
   id SERIAL primary key,
   name varchar(255),
   description text,
@@ -18,7 +20,8 @@ CREATE TABLE products (
   retail INT
 );
 
-CREATE TABLE stocks (
+CREATE TABLE stocks
+(
   id SERIAL primary key,
   product_id INT REFERENCES products(id),
   quantity INT,
