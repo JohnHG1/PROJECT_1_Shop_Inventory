@@ -23,12 +23,19 @@ require("pry-byebug")
          Tel: 08081 123 4567" })
   supplier2.save
 
+  supplier3 = Supplier.new({
+    "name" => "FORD",
+    "contact" =>
+        "FORD Motors
+         Tel: 0141 987 6543" })
+  supplier3.save
+
 
 
   product1 = Product.new({
-    "name" => "SLK-Class 280 (R173)",
+    "name" => "SLK-Class 280 (R184)",
     "description" =>
-        "Two-passenger, front-engine, rear-drive, retractable hardtop roadster",
+        "Two-passenger, front-engine, rear-drive, retractable hardtop convertible",
     "supplier_id" => 1,
     "cost" => 21000,
     "retail" => 39000 })
@@ -37,12 +44,20 @@ require("pry-byebug")
   product2 = Product.new({
     "name" => "BMW 2 Series Convetable",
     "description" =>
-        "four-passenger, front-engine, rear-drive, retractable hardtop roadster",
+        "four-passenger, front-engine, rear-drive, retractable hardtop convertible",
     "supplier_id" => 2,
     "cost" => 19000,
     "retail" => 29500 })
   product2.save
 
+  product3 = Product.new({
+    "name" => "SLK-Class 200 (R173)",
+    "description" =>
+        "Two-passenger, front-engine, rear-drive, retractable hardtop roadster",
+    "supplier_id" => 1,
+    "cost" => 19000,
+    "retail" => 27000 })
+  product3.save
 
 
   stock1 = Car.new({
@@ -57,6 +72,11 @@ require("pry-byebug")
     "colour" => "greenx1" })
   stock2.save
 
+  stock3 = Car.new({
+    "product_id" => 3,
+    "quantity" => 1,
+    "colour" => "blackx1" })
+  stock1.save
 
 
 
