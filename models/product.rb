@@ -28,7 +28,7 @@ class Product
   end
 
   def supplier()
-    supplier = Supplier.find(@supplier)
+    supplier = Supplier.find(@supplier_ids)
     return supplier
   end
 

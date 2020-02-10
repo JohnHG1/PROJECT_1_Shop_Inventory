@@ -1,46 +1,25 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Stock System</title>
-  <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
-
-  <link rel="icon" href="/images/Mercedes-Logo.jpeg" />
-
-  <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
-  <link rel="stylesheet" type="text/css" href="/styles/forms.css">
-  <link rel="stylesheet" type="text/css" href="/styles/structure.css">
-  <link rel="stylesheet" type="text/css" href="/styles/tables.css">
-</head>
-<body>
-<main class="flex flex--row">
-  <nav>
-    <ul>
-      <li>
-        <a href="/stock">Full Stock</a>
-      </li>
-      <li>
-        <a href="/product">Products</a>
-      </li>
-      <li>
-        <a href="/suppliers">Suppliers</a>
-      </li>
-    </ul>
-  </nav>
-  <section id="content">
-  <%= yield %>
-  </section>
-  </main>
-</body>
-</html>
-
-
-<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
+    <h1>Welcome to Stock Control</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="/stocks">Full Stock</a>
+        </li>
+        <li>
+          <a href="/product">Products</a>
+        </li>
+        <li>
+          <a href="/suppliers">Suppliers</a>
+        </li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>

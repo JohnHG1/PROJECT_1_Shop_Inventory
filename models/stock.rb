@@ -26,17 +26,37 @@ class Stock
     @id = results.first()['id'].to_i
   end
 
+  def update()
+      sql = "UPDATE stocks
+      SET
+      (
+        product_id,
+        quantity
+      ) =
+      (
+        $1, $2
+      )
+      WHERE id = $3"
+      values = [@product_id, @quantity, @id]
+      SqlRunner.run( sql, values )
+    end
+
+    def product()
+      product = Product.find(@product_id)
+      return products
+    end
+
   def self.all()
     sql = "SELECT * FROM stocks"
     results = SqlRunner.run( sql )
-    return results.map { |stock| Stock.new( stock)}
+    return results.map { |stock| Stock.new(stock)}
   end
 
   def self.find( id )
     sql = "SELECT * FROM stocks
     WHERE id = $1"
     values = [id]
-    results = SqlRunner.run( sql, values )
+    results = SqlRunner.run(sql, values)
     return Stock.new( results.first )
   end
 
