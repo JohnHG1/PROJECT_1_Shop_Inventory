@@ -1,7 +1,6 @@
-DROP TABLE suppliers;
-DROP TABLE products;
 DROP TABLE stocks;
-
+DROP TABLE products;
+DROP TABLE suppliers;
 
 CREATE TABLE suppliers
 (
