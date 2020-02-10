@@ -26,13 +26,6 @@ class Stock
     @id = results.first()['id'].to_i
   end
 
-  def products()
-    sql = "SELECT z.* FROM products z INNER JOIN suppliers b ON b.products_id = z.id WHERE b.stock_id = $1;"
-    values = [@id]
-    results = SqlRunner.run(sql, values)
-    return results.map { |product| Product.new(product) }
-  end
-
   def self.all()
     sql = "SELECT * FROM stocks"
     results = SqlRunner.run( sql )
