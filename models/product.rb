@@ -9,23 +9,11 @@ class Product
     @model = options['model']
     @description = options['description']
     @colour = options['colour']
-    @cost = options['cost']
-    @retail = options['retail']
+    @cost = options['cost'].to_i
+    @retail = options['retail'].to_i
     @supplier_id = options['supplier_id'].to_i
-
   end
 
-  def model()
-        return "#{@model}"
-  end
-
-  def description()
-        return "#{@desription}"
-  end
-
-  def cost()
-        return "#{@cost}"
-  end
 
   def supplier()
     supplier = Supplier.find(@supplier_id)
@@ -53,7 +41,7 @@ class Product
   end
 
   def stocks
-    sql = "SELECT v.* FROM stocks v INNER JOIN suppliers b ON b.stocks_id = v.id WHERE b.product_id = $1;"
+    sql = "SELECT * FROM stocks WHERE product_id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map { |stock| Stock.new(stock) }

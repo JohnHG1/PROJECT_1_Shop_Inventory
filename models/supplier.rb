@@ -11,15 +11,6 @@ class Supplier
 
   end
 
-  def full_name()
-      return "#{@name}"
-    end
-
-  def contact()
-    contact = Contact.find(@contact)
-    return contact
-  end
-
   def save()
     sql = "INSERT INTO suppliers
     (
@@ -68,13 +59,6 @@ class Supplier
     suppliers = SqlRunner.run( sql )
     result = suppliers.map { |supplier| Supplier.new(supplier)}
     return result
-  end
-
-  def self.delete(id)
-    sql = "DELETE FROM suppliers
-    WHERE id = $1"
-    values = [id]
-    SqlRunner.run(sql, values)
   end
 
   def self.find( id )
