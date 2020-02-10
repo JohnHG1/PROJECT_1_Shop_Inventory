@@ -42,7 +42,7 @@ require("pry-byebug")
   product1.save
 
   product2 = Product.new({
-    "name" => "BMW 2 Series Convetable",
+    "name" => "BMW 2 Series",
     "description" =>
         "four-passenger, front-engine, rear-drive, retractable hardtop convertible",
     "supplier_id" => 2,

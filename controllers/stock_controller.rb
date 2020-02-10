@@ -12,3 +12,9 @@ get '/stocks/:id' do
   @stock = Stock.find(params['id'].to_i)
   erb( :"stocks/show" )
 end
+
+post '/stocks/new' do
+  @stock =Stock.new(params)
+  @stock.save()
+  erb(:create)
+end

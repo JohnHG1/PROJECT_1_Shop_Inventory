@@ -14,7 +14,7 @@ CREATE TABLE products
   id SERIAL primary key,
   name varchar(255),
   description text,
-  supplier_id INT REFERENCES suppliers(id),
+  colour varchar(255),
   cost INT,
   retail INT
 );
@@ -23,6 +23,5 @@ CREATE TABLE stocks
 (
   id SERIAL primary key,
   product_id INT REFERENCES products(id),
-  quantity INT,
-  colour varchar(255)
+  supplier_id INT REFERENCES suppliers(id)
 );
