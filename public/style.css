@@ -1,0 +1,86 @@
+
+
+body {
+  background: black url('/images/mercedes-logo.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right;
+  background-size: 55%;
+  color: papayawhip;
+  font-family: 'Merriweather', serif;
+  padding: 5px;
+  margin: 10px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Special Elite', cursive;
+  margin: 5px;
+  padding: 15px;
+}
+
+h1 {
+  font-size: 2.95em;
+  color: darkred;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 2.1em;
+  color: white;
+  margin-bottom: 20px;
+}
+
+h5 {
+  font-size: 1.4em;
+  color: white;
+  margin-bottom: 20px;
+}
+
+nav {
+  padding: 10px;
+  margin: 10px;
+  padding-right: 35px;
+}
+
+nav ul li {
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+main {
+  padding: 85px;
+}
+
+
+.flex--row {
+  flex-direction: row;
+}
+
+#content {
+  border-left: 1px solid darkred;
+  padding-left: 25px;
+}
+
+td, th {
+  text-align: left;
+}
+
+td {
+  padding: 10px 20px 0px 0px;
+}
+
+th {
+  padding: 0px 20px 10px 0px;
+  border-bottom: 1px solid papayawhip;
+}
+
+table {
+  border-collapse: collapse;
+}

@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Stock
 
-  attr_reader( :product_id, :supplier_id, :id )
+  attr_reader( :product_id, :quantity, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -43,7 +43,7 @@ class Stock
 
     def product()
       product = Product.find(@product_id)
-      return products
+      return product
     end
 
   def self.all()

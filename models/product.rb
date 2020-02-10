@@ -28,7 +28,7 @@ class Product
   end
 
   def supplier()
-    supplier = Supplier.find(@supplier_ids)
+    supplier = Supplier.find(@supplier_id)
     return supplier
   end
 
@@ -68,12 +68,13 @@ class Product
         colour,
         cost,
         retail
+        supplier_id
       ) =
       (
-        $1, $2, $3, $4, $5
+        $1, $2, $3, $4, $5, $6
       )
-      WHERE id = $6"
-      values = [@model, @description, @colour, @cost, @retail, @id]
+      WHERE id = $7"
+      values = [@model, @description, @colour, @cost, @retail, @supplier_id, @id]
       SqlRunner.run( sql, values )
     end
 
@@ -90,6 +91,14 @@ class Product
     results = SqlRunner.run( sql, values )
     return Product.new( results.first )
   end
+
+  def delete()
+    sql = "DELETE FROM products
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
 
   def self.delete_all
     sql = "DELETE FROM products"
