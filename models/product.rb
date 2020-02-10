@@ -2,20 +2,21 @@ require_relative( '../db/sql_runner' )
 
 class Product
 
-  attr_reader( :name, :description, :supplier_id, :cost, :retail,  :id )
+  attr_reader( :model, :description, :colour, :cost, :retail,  :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
-    @name = options['name']
+    @model = options['model']
     @description = options['description']
-    @supplier_id = options['supplier_id']
+    @colour = options['colour']
     @cost = options['cost']
     @retail = options['retail']
+    @supplier_id = options['supplier_id'].to_i
 
   end
 
-  def name()
-        return "#{@name}"
+  def model()
+        return "#{@model}"
   end
 
   def description()
@@ -34,18 +35,19 @@ class Product
   def save()
     sql = "INSERT INTO products
     (
-      name,
+      model,
       description,
-      supplier_id,
+      colour,
       cost,
-      retail
+      retail,
+      supplier_id
     )
     VALUES
     (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4, $5, $6
     )
     RETURNING id"
-    values = [@name, @description, @supplier_id, @cost, @retail]
+    values = [@model, @description, @colour, @cost, @retail, @supplier_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -61,9 +63,9 @@ class Product
       sql = "UPDATE products
       SET
       (
-        name,
+        model,
         description,
-        supplier_id,
+        colour,
         cost,
         retail
       ) =
@@ -71,7 +73,7 @@ class Product
         $1, $2, $3, $4, $5
       )
       WHERE id = $6"
-      values = [@name, @description, @supplier_id, @cost, @retail, @id]
+      values = [@model, @description, @colour, @cost, @retail, @id]
       SqlRunner.run( sql, values )
     end
 

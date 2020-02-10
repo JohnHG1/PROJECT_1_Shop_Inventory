@@ -2,28 +2,26 @@ require_relative( '../db/sql_runner' )
 
 class Stock
 
-  attr_reader( :product_id, :quantity, :colour, :id )
+  attr_reader( :product_id, :supplier_id, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @product_id = options['product_id']
     @quantity = options['quantity'].to_i
-    @colour = options['colour']
   end
 
   def save()
     sql = "INSERT INTO stocks
     (
       product_id,
-      quantity,
-      colour
+      quantity
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2
     )
     RETURNING id"
-    values = [@product_id, @quantity, @colour]
+    values = [@product_id, @quantity]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end

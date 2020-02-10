@@ -33,50 +33,50 @@ require("pry-byebug")
 
 
   product1 = Product.new({
-    "name" => "SLK-Class 280 (R184)",
+    "model" => "SLK-Class 280 (R184)",
     "description" =>
         "Two-passenger, front-engine, rear-drive, retractable hardtop convertible",
-    "supplier_id" => 1,
+    "colour" => "green",
     "cost" => 21000,
-    "retail" => 39000 })
+    "retail" => 39000,
+    "supplier_id" => supplier1.id })
   product1.save
 
   product2 = Product.new({
-    "name" => "BMW 2 Series",
+    "model" => "2 Series",
     "description" =>
         "four-passenger, front-engine, rear-drive, retractable hardtop convertible",
-    "supplier_id" => 2,
+    "colour" => "red",
     "cost" => 19000,
-    "retail" => 29500 })
+    "retail" => 29500,
+    "supplier_id" => supplier2.id  })
   product2.save
 
   product3 = Product.new({
-    "name" => "SLK-Class 200 (R173)",
+    "model" => "SLK-Class 200 (R173)",
     "description" =>
         "Two-passenger, front-engine, rear-drive, retractable hardtop roadster",
-    "supplier_id" => 1,
+    "colour" => "silver",
     "cost" => 19000,
-    "retail" => 27000 })
+    "retail" => 27000,
+    "supplier_id" => supplier1.id  })
   product3.save
 
 
-  stock1 = Car.new({
-    "product_id" => 1,
-    "quantity" => 2,
-    "colour" => "silverx1 redx1" })
+  stock1 = Stock.new({
+    "product_id" => product1.id,
+    "quantity" => 2 })
   stock1.save
 
-  stock2 = Car.new({
-    "product_id" => 2,
-    "quantity" => 1,
-    "colour" => "greenx1" })
+  stock2 = Stock.new({
+    "product_id" => product2.id,
+    "quantity" => 3 })
   stock2.save
 
-  stock3 = Car.new({
-    "product_id" => 3,
-    "quantity" => 1,
-    "colour" => "blackx1" })
-  stock1.save
+  stock3 = Stock.new({
+    "product_id" => product3.id,
+    "quantity" => 1 })
+  stock3.save
 
 
 
