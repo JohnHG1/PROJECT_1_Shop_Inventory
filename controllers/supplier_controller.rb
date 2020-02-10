@@ -18,6 +18,10 @@ get '/suppliers/:id' do
   erb( :"suppliers/show" )
 end
 #
+
+
+
+
 # get '/suppliers/new' do
 #   @stocks = Stock.all
 #   @products = Product.all

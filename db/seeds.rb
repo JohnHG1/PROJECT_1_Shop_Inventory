@@ -4,9 +4,9 @@ require_relative('../models/stock')
 
 require("pry-byebug")
 
-# Stock.delete_all()
-# Product.delete_all()
-# Supplier.delete_all()
+Stock.delete_all()
+Product.delete_all()
+Supplier.delete_all()
 
 
   supplier1 = Supplier.new({

@@ -18,3 +18,8 @@ post '/stocks/new' do
   @stock.save()
   erb(:create)
 end
+
+post '/stocks/:id/delete' do
+  Stock.destroy(params[:id])
+  redirect to("/stocks")
+end

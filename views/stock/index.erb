@@ -1,47 +1,16 @@
-<%# Click on button above to navigate
+<h1>Stocks</h1>
 
-  <% for stock in @stock  %>
-    <p><%= stock.product.supplier.name %></p>
-    <p><%= stock.product.model %></p>
-    <p><%= stock.product.description %></p>
-    <p><%= stock.product.colour %></p>
-    <p><%= stock.quantity %></p>
-    <p><%= stock.product.cost %></p>
-    <p><%= stock.product.retail %></p>
-
-
-        <% for supplier in @supplier %>
-          <p><%= supplier.name %></p>
-          <p><%= supplier.details %></p>
-
-
-          <table>
-            <tr>
-              <th>Supplier Name</th>
-              <th></th>
-              <th>Model</th>
-              <th></th>
-              <th>Colour</th>
-              <th></th>
-              <th>Quantity</th>
-              <th></th>
-              <th>Cost</th>
-              <th></th>
-              <th>Retail</th>
-            </tr>
-            <% for stock in @stock %>
-            <tr>
-              td><a href="/stock/<%= stock.product.supplier.name %></td>
-              <td><%= stock.product.model %></td>
-              <td><%= stock.product.colour %></td>
-              <td><%= stock.quantity %></td>
-              <td><%= stock.product.cost %></td>
-              <td><%= stock.product.retail %></td>
-            </tr>
-            <% end %>
-          </table> %>
-
-
-
-
-  <% end %> %>
+<table>
+  <tr>
+    <th>Product_id</th>
+    <th></th>
+    <th>Quantity</th>
+  </tr>
+  <% for stock in @stocks %>
+  <tr>
+    <td><a href="/stocks/<%= stock.id %>"><%= product.id %></a></td>
+    <td>|</td>
+    <td><%= stock.quantity %></td>
+  </tr>
+  <% end %>
+</table>

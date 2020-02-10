@@ -1,0 +1,24 @@
+<h1>Available Stock</h1>
+
+<form action="/products" method="post">
+  <label>
+  Select a product:
+    <select name="supplier_id">
+      <% for supplier in @suppliers %>
+      <option value="<%= supplier.id %>"><%= supplier.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Select a product:
+    <select name="product_id">
+      <% for product in @products %>
+      <option value="<%= product.id %>"><%= product.name %></option>
+
+      <% end %>
+    </select>
+  </label>
+
+  <input class="btn btn--action" type='submit' value="Submit!">
+</form>

@@ -1,3 +1,18 @@
-Hello Zsolt
+<%# Hello Zsolt
 
-<%= @supplier.name %>
+<%= @supplier.name %> %>
+
+
+
+
+<h1>Supplier <%= @supplier.name %></h1>
+
+<p>Contact: <%= @supplier.type %></p>
+
+<h3>Victims:</h3>
+
+<ul>
+  <% @supplier.stocks.each do |stock| %>
+  <li><%= stock.name %></li>
+  <% end %>
+</ul>
