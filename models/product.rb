@@ -32,7 +32,7 @@ class Product
   end
 
   def save()
-    sql = "INSERT INTO product
+    sql = "INSERT INTO products
     (
       name,
       description,
@@ -50,12 +50,30 @@ class Product
     @id = results.first()['id'].to_i
   end
 
-  # def suppliers
-  #   sql = "SELECT v.* FROM suppliers v INNER JOIN stocks b ON b.suppliers_id = v.id WHERE b.product_id = $1;"
-  #   values = [@id]
-  #   results = SqlRunner.run(sql, values)
-  #   return results.map { |product| Product.new(product) }
-  # end
+  def stocks
+    sql = "SELECT v.* FROM stocks v INNER JOIN suppliers b ON b.stocks_id = v.id WHERE b.product_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |stock| Stock.new(stock) }
+  end
+
+  def update()
+      sql = "UPDATE products
+      SET
+      (
+        name,
+        description,
+        supplier_id,
+        cost,
+        retail
+      ) =
+      (
+        $1, $2, $3, $4, $5
+      )
+      WHERE id = $6"
+      values = [@name, @description, @supplier_id, @cost, @retail, @id]
+      SqlRunner.run( sql, values )
+    end
 
   def self.all()
     sql = "SELECT * FROM products"
