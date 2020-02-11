@@ -23,7 +23,7 @@ end
 
 post '/suppliers' do
   @supplier = Supplier.new(params)
-  @Supplier.save()
+  @supplier.save()
   redirect to "/suppliers/#{@supplier.id}"
 end
 

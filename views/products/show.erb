@@ -5,3 +5,8 @@
 
 
 <a href="/products/<%= @product.id %>/edit">Edit Car Details</a>
+<br>
+<br>
+<form action="/products/<%= @product.id %>/delete" method="post">
+  <input type="submit" value="delete">
+</form>
