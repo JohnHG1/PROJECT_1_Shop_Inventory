@@ -16,6 +16,6 @@ CREATE TABLE products
   colour varchar(255),
   cost INT,
   retail INT,
-  supplier_id INT REFERENCES suppliers(id),
+  supplier_id INT REFERENCES suppliers(id) ON DELETE CASCADE,
   quantity INT
 );

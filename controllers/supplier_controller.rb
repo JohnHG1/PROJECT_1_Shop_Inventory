@@ -38,3 +38,9 @@ get '/suppliers/:id/edit' do
   @suppliers = Supplier.all()
   erb(:"suppliers/edit")
 end
+
+post '/suppliers/:id/delete' do
+  @supplier = Supplier.find(params[:id])
+  @supplier.delete()
+  redirect to "/suppliers"
+end

@@ -2,3 +2,10 @@
 
 
 <a href="/suppliers/<%= @supplier.id %>/edit">Edit Supplier Details</a>
+<br>
+<br>
+
+
+<form action="/suppliers/<%= @supplier.id %>/delete" method="post">
+  <input type="submit" value="delete">
+</form>
