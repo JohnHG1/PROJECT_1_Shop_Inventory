@@ -1,4 +1,3 @@
-DROP TABLE stocks;
 DROP TABLE products;
 DROP TABLE suppliers;
 
@@ -17,12 +16,6 @@ CREATE TABLE products
   colour varchar(255),
   cost INT,
   retail INT,
-  supplier_id INT REFERENCES suppliers(id)
-);
-
-CREATE TABLE stocks
-(
-  id SERIAL primary key,
-  product_id INT REFERENCES products(id),
+  supplier_id INT REFERENCES suppliers(id),
   quantity INT
 );

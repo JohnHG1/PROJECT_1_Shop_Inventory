@@ -1,22 +1,10 @@
+<h1>Suppliers</h1>
+<a href="/suppliers/new">Add a new supplier!</a>
 
-  <%# <% for supplier in @suppliers %>
-    <a href="/suppliers/<%= supplier.id %>"><%= supplier.name %></a>
-  <% end %> %>
-
-
-  <h1>Suppliers</h1>
-
-  <!-- <table>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th>Contact</th>
-    </tr>
-    <% for supplier in @suppliers %>
-    <tr>
-      <td><a href="/suppliers/<%= supplier.id %>"><%= supplier.name %></a></td>
-      <td>|</td>
-      <td><%= supplier.contact %></td>
-    </tr>
-    <% end %>
-  </table> -->
+<ul>
+  <% for supplier in @suppliers %>
+  <li>
+    <p> <a href="/suppliers/<%= supplier.id %>"> <%= supplier.name %>  </a></p>
+  </li>
+  <% end %>
+</ul>

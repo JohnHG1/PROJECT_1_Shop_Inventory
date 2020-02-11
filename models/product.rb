@@ -1,8 +1,8 @@
 require_relative( '../db/sql_runner' )
 
 class Product
-
-  attr_reader( :model, :description, :colour, :cost, :retail,  :id )
+  attr_accessor :model, :description, :colour, :cost, :retail, :quantity, :supplier_id
+  attr_reader(:id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -12,6 +12,7 @@ class Product
     @cost = options['cost'].to_i
     @retail = options['retail'].to_i
     @supplier_id = options['supplier_id'].to_i
+    @quantity = options['quantity'].to_i
   end
 
 
@@ -21,6 +22,7 @@ class Product
   end
 
   def save()
+
     sql = "INSERT INTO products
     (
       model,
@@ -28,14 +30,15 @@ class Product
       colour,
       cost,
       retail,
-      supplier_id
+      supplier_id,
+      quantity
     )
     VALUES
     (
-      $1, $2, $3, $4, $5, $6
+      $1, $2, $3, $4, $5, $6, $7
     )
     RETURNING id"
-    values = [@model, @description, @colour, @cost, @retail, @supplier_id]
+    values = [@model, @description, @colour, @cost, @retail, @supplier_id, @quantity]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -55,21 +58,22 @@ class Product
         description,
         colour,
         cost,
-        retail
-        supplier_id
+        retail,
+        supplier_id,
+        quantity
       ) =
       (
-        $1, $2, $3, $4, $5, $6
+        $1, $2, $3, $4, $5, $6, $7
       )
-      WHERE id = $7"
-      values = [@model, @description, @colour, @cost, @retail, @supplier_id, @id]
+      WHERE id = $8"
+      values = [@model, @description, @colour, @cost, @retail, @supplier_id, @quantity, @id]
       SqlRunner.run( sql, values )
     end
 
   def self.all()
     sql = "SELECT * FROM products"
     results = SqlRunner.run( sql )
-    return results.map { |hash| Products.new(hash) }
+    return results.map { |hash| Product.new(hash) }
   end
 
   def self.find( id )

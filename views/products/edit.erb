@@ -1,0 +1,30 @@
+<form method="post" action="/products/<%= @product.id %>">
+
+  <label for="model">Model:</label>
+  <input id="model" type="text" name="model" value="<%= @product.model %>">
+
+  <label for="description">Description:</label>
+    <input id="description" type="text" name="description" value="<%= @product.description %>">
+
+  <label for="colour">Colour:</label>
+  <input id="colour" type="text" name="colour" value="<%= @product.colour %>">
+
+
+
+
+  <label for="cost">Cost:</label>
+    <input id="cost" type="number" name="cost"value="<%= @product.cost %>">
+
+
+
+  <label for="retail">Retail:</label>
+  <input id="retail" type="number" name="retail" value="<%= @product.retail %>">
+
+  <label for="supplier-select">Supplier:</label>
+  <select id="supplier-select" name="supplier_id">
+    <% for supplier in @suppliers %>
+      <option value="<%= supplier.id %>"><%= supplier.name %></option>
+    <% end %>
+  </select>
+  <input type='submit' value="Save"/>
+</form>

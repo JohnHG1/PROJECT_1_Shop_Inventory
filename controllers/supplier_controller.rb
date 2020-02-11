@@ -3,38 +3,32 @@ require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 require_relative( '../models/supplier.rb' )
 require_relative( '../models/product.rb' )
-require_relative( '../models/stock.rb' )
 also_reload( '../models/*' )
 
-# INDEX
+
 get '/suppliers' do
   @suppliers = Supplier.all
-  erb ( :"suppliers/index" )
+  erb(:"suppliers/index")
 end
 
-# show
-get '/suppliers/:id' do
-  @supplier = Supplier.find(params['id'].to_i)
-  erb( :"suppliers/show" )
+get '/suppliers/new' do
+  @suppliers = Supplier.all()
+  erb(:"suppliers/new")
 end
-#
 
+get "/suppliers/:id" do
+  @supplier = Supplier.find(params[:id].to_i)
+  erb(:"suppliers/show")
+end
 
+post '/suppliers' do
+  @supplier = Supplier.new(params)
+  @supplier.save()
+  redirect to "/suppliers/#{@supplier.id}"
+end
 
-
-# get '/suppliers/new' do
-#   @stocks = Stock.all
-#   @products = Product.all
-#   erb(:"suppliers/new")
-# end
-#
-# post '/suppliers' do
-#   supplier = Supplier.new(params)
-#   supplier.save
-#   redirect to("/suppliers")
-# end
-#
-# post '/suppliers/:id/delete' do
-#   Supplier.destroy(params[:id])
-#   redirect to("/suppliers")
+# get '/suppliers/:id/edit' do
+#   @supplier = Supplier.find(params[:id])
+#   # @suppliers = Supplier.all()
+#   erb(:"suppliers/edit")
 # end

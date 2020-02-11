@@ -1,18 +1,4 @@
-<%# Hello Zsolt
-
-<%= @supplier.name %> %>
+<p><%= @supplier.contact %></p>
 
 
-
-
-<h1>Supplier <%= @supplier.name %></h1>
-
-<p>Contact: <%= @supplier.type %></p>
-
-<h3>Victims:</h3>
-
-<ul>
-  <% @supplier.stocks.each do |stock| %>
-  <li><%= stock.name %></li>
-  <% end %>
-</ul>
+<a href="/suppliers/<%= @suppliers.id %>/edit">Edit Supplier Details</a>

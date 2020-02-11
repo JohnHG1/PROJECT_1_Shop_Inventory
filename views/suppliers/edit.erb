@@ -1,0 +1,11 @@
+<form method="post" action="/suppliers">
+
+  <label for="name">Name:</label>
+  <input id="name" type="text" name="name" value="<%= @supplier.name %>">
+
+  <label for="contact">Contact:</label>
+    <input id="contact" type="text" name="contact" <%= @supplier.contact %>">
+
+
+  <input type='submit' value="Edit Details"/>
+</form>
