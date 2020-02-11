@@ -1,10 +1,13 @@
-<form method="post" action="/suppliers">
+<form method="post" action="/suppliers/<%= @supplier.id %>">
 
   <label for="name">Name:</label>
   <input id="name" type="text" name="name" value="<%= @supplier.name %>">
 
   <label for="contact">Contact:</label>
-    <input id="contact" type="text" name="contact" <%= @supplier.contact %>">
+  <input id="contact" type="text" name="contact" value="<%= @supplier.contact %>">
+
+
+
 
 
   <input type='submit' value="Edit Details"/>

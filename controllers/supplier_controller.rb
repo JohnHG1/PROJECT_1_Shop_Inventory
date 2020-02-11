@@ -23,12 +23,18 @@ end
 
 post '/suppliers' do
   @supplier = Supplier.new(params)
-  @supplier.save()
+  @Supplier.save()
   redirect to "/suppliers/#{@supplier.id}"
 end
 
-# get '/suppliers/:id/edit' do
-#   @supplier = Supplier.find(params[:id])
-#   # @suppliers = Supplier.all()
-#   erb(:"suppliers/edit")
-# end
+post "/suppliers/:id" do
+  supplier = Supplier.new(params)
+  supplier.update()
+  redirect to "/suppliers/#{params['id']}"
+end
+
+get '/suppliers/:id/edit' do
+  @supplier = Supplier.find(params[:id])
+  @suppliers = Supplier.all()
+  erb(:"suppliers/edit")
+end

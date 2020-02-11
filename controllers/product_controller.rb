@@ -25,9 +25,9 @@ post '/products' do
 end
 
 post "/products/:id" do
-product = Product.new(params)
-product.update()
-redirect to "/products/#{params['id']}"
+  product = Product.new(params)
+  product.update()
+  redirect to "/products/#{params['id']}"
 end
 
 get '/products/:id/edit' do
