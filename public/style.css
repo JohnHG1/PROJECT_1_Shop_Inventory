@@ -1,11 +1,11 @@
 
 
 body {
-  background: black url('/images/mercedes-logo.jpeg');
+  background: url('/images/Grade Grey.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: right;
-  background-size: 55%;
+  background-size: 45%;
   color: papayawhip;
   font-family: 'Merriweather', serif;
   padding: 5px;
