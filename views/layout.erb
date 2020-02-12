@@ -5,15 +5,22 @@
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    <nav>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-          <a href="/products">All Products</a>
-          <a href="/suppliers">All Suppliers</a>
-        </li>
-      </ul>
-    </nav>
+  <nav class="navbar">
+  <a href="/">HOME</a>
+  <div class="dropdown">
+    <button class="dropbtn">SELECT OPTION
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/products">All Cars</a>
+      <a href="/products/new">Add New Car</a>
+      <a href="/suppliers">All Suppliers</a>
+      <a href="/suppliers/new">Add New Supplier</a>
+    </div>
+  </div>
+</nav>
+
+
     <%= yield %>
   </body>
 </html>

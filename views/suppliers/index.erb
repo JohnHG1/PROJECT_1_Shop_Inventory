@@ -1,10 +1,12 @@
 <h1>Suppliers</h1>
-<a href="/suppliers/new">Add a new supplier!</a>
+<form action="/suppliers/new" method="get">
+  <input class="btn btn--action" type='submit' value="Add New Supplier"/>
+</form>
 
 <ul>
   <% for supplier in @suppliers %>
   <li>
-    <p> <a href="/suppliers/<%= supplier.id %>"> <%= supplier.name %>  </a></p>
+    <h3> <a href="/suppliers/<%= supplier.id %>"> <%= supplier.name %>  </a></h3>
   </li>
   <% end %>
 </ul>

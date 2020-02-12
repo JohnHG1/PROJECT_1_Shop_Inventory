@@ -1,11 +1,16 @@
-<p><%= @supplier.contact %></p>
+<h3><%= @supplier.contact %></h3>
 
 
-<a href="/suppliers/<%= @supplier.id %>/edit">Edit Supplier Details</a>
-<br>
+<form action="/suppliers/<%= @supplier.id %>/edit" method="get">
+  <!-- <input type="submit" value="delete"> -->
+  <input class="btn btn--action" type='submit' value="Edit Supplier Details"/>
+
+</form><br>
 <br>
 
 
 <form action="/suppliers/<%= @supplier.id %>/delete" method="post">
-  <input type="submit" value="delete">
+  <!-- <input type="submit" value="delete"> -->
+  <input class="btn btn--action" type='submit' value="Delete"/>
+
 </form>

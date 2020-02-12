@@ -1,12 +1,18 @@
-<p><%= @product.model %></p>
-<p><%= @product.description %></p>
-<p><%= @product.colour.upcase %></p>
-<p><%= @product.retail %></p>
+<h2><%= @product.model %></h2>
+<br>
+<h3><%= @product.description %></h3>
+<br>
+<h2><%= @product.colour.upcase %></h2>
+<br>
+<h2><%= @product.retail %></h2>
 
 
-<a href="/products/<%= @product.id %>/edit">Edit Car Details</a>
+<form action="/products/<%= @product.id %>/edit" method="get">
+  <input class="btn btn--action" type='submit' value="Edit Car Details"/>
+</form>
 <br>
 <br>
 <form action="/products/<%= @product.id %>/delete" method="post">
-  <input type="submit" value="delete">
+  <input class="btn btn--action" type='submit' value="Delete Car"/>
+
 </form>

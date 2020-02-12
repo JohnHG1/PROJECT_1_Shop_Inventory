@@ -1,9 +1,10 @@
 <h1>Products</h1>
-<a href="/products/new">Add a new car!</a>
+<a href="/products/new"><input class="btn btn--action" type='submit' value="Add New Car"/></a>
+
 <ul>
   <% for product in @products %>
   <li>
-    <p> <a href="/products/<%= product.id %>"> <%= product.supplier.name %> - <%= product.model %> - qty: <%= product.quantity %></a></p>
+    <p> <a href="/products/<%= product.id %>"> <%= product.supplier.name %> - <%= product.model %> - Qty: <%= product.quantity %></a></p>
   </li>
   <% end %>
 </ul>

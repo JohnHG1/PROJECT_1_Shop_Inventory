@@ -6,9 +6,12 @@
   <label for="contact">Contact:</label>
   <input id="contact" type="text" name="contact" value="<%= @supplier.contact %>">
 
+  <% for supplier in @suppliers %>
+    <option value="<%= supplier.id %>"><%= supplier.name %></option>
+  <% end %>
 
 
 
+  <input class="btn btn--action" type='submit' value="Edit Supplier Details"/>
 
-  <input type='submit' value="Edit Details"/>
-</form>
+  </form>
