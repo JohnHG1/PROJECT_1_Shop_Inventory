@@ -3,7 +3,7 @@
 <ul>
   <% for product in @products %>
   <li>
-    <p> <a href="/products/<%= product.id %>"> <%= product.supplier.name %> - <%= product.model %> </a></p>
+    <p> <a href="/products/<%= product.id %>"> <%= product.supplier.name %> - <%= product.model %> - qty: <%= product.quantity %></a></p>
   </li>
   <% end %>
 </ul>
