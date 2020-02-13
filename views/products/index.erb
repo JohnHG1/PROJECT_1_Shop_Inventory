@@ -2,15 +2,15 @@
 <a href="/products/new"><input class="btn btn--action" type='submit' value="Add New Car"/></a>
 
 
-<div class="Rtable Rtable--4cols">
+<div class="Rtable Rtable--4cols r-row">
 
   <% for product in @products %>
-
-    <div class="Rtable-cell"> <a href="/products/<%= product.id %>">
+    <div class="Rtable-cell ffs r1-row"> <a href="/products/<%= product.id %>">
       <%= product.supplier.name %> </a></div>
-      <div class="Rtable-cell"><%= product.model %></div>
-      <div class="Rtable-cell"><%= product.retail %></div>
-      <div class="Rtable-cell">Qty: <%= product.quantity %></div>
+      <div class="Rtable-cell ffs r1-row"><%= product.model %></div>
+      <div class="Rtable-cell ffs r1-row retail"><%= product.retail %></div>
+      <div class="Rtable-cell ffs r1-row">Qty: <%= product.quantity %></div>
+
   <% end %>
 </div>
 

@@ -15,7 +15,17 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Ariel', sans-serif;
   margin: 5px;
-  padding: 15px;
+  padding: 5px;
+}
+
+a {
+  font-size: 0.8em;
+}
+
+a:hover {
+
+  color: green;
+  text-decoration: underline overline;
 }
 
 h1 {
@@ -30,12 +40,17 @@ h2 {
   margin-bottom: 20px;
 }
 
+h3 {
+  font-size: 2em;
+  color: black;
+  margin-bottom: 20px;
+}
+
 h5 {
   font-size: 1.55em;
   color: dark black;
   margin-bottom: 20px;
 }
-
 
 nav {
   padding: 10px;
@@ -61,7 +76,6 @@ main {
   padding: 45px;
 }
 
-
 .flex--row {
   flex-direction: row;
 }
@@ -75,18 +89,35 @@ main {
 .Rtable {
   display: flex;
   flex-wrap: wrap;
-  width: 70%;  
+  width: 70%;
   margin: 0 0 3em 0;
   padding: 0;
 }
 .Rtable-cell {
   box-sizing: border-box;
   flex-grow: 1;
-  padding: 0.8em 1.2em;
+  padding: 0.8em 1em;
   overflow: hidden; // Or flex might break
   list-style: none;
   border: solid @bw white;
   background: fade(slategrey,20%);
+}
+
+.ffs {
+  font-size: 1.9em;
+  color: black;
+  margin-bottom: 3px;
+}
+
+.r-row {
+  border-top: 5px solid black;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+
+}
+
+.r1-row {
+  border-bottom: 5px solid black;
 }
 
 .Rtable--2cols > .Rtable-cell  { width: 50%; }
@@ -95,7 +126,13 @@ main {
 .Rtable--5cols > .Rtable-cell  { width: 20%; }
 .Rtable--6cols > .Rtable-cell  { width: 16.6%; }
 
+.costcl {
+  color: red;
+}
 
+.retailcl {
+  color: green;
+}
 
 
 .btn {

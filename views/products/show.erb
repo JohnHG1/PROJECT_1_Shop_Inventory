@@ -4,7 +4,11 @@
 <br>
 <h2><%= @product.colour.upcase %></h2>
 <br>
-<h2><%= @product.retail %></h2>
+<h2 class= "costcl"><%= @product.cost %></h2>
+<br>
+<h2 class= "retailcl"><%= @product.retail %></h2>
+
+
 
 
 <form action="/products/<%= @product.id %>/edit" method="get">
