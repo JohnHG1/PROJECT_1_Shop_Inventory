@@ -71,22 +71,32 @@ main {
   padding-left: 25px;
 }
 
-td, th {
-  text-align: left;
+
+.Rtable {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;  
+  margin: 0 0 3em 0;
+  padding: 0;
+}
+.Rtable-cell {
+  box-sizing: border-box;
+  flex-grow: 1;
+  padding: 0.8em 1.2em;
+  overflow: hidden; // Or flex might break
+  list-style: none;
+  border: solid @bw white;
+  background: fade(slategrey,20%);
 }
 
-td {
-  padding: 20px 30px 10px 10px;
-}
+.Rtable--2cols > .Rtable-cell  { width: 50%; }
+.Rtable--3cols > .Rtable-cell  { width: 33.33%; }
+.Rtable--4cols > .Rtable-cell  { width: 25%; }
+.Rtable--5cols > .Rtable-cell  { width: 20%; }
+.Rtable--6cols > .Rtable-cell  { width: 16.6%; }
 
-th {
-  padding: 10px 30px 20px 10px;
-  border-bottom: 1px solid papayawhip;
-}
 
-table {
-  border-collapse: collapse;
-}
+
 
 .btn {
   border:0px none;
@@ -160,7 +170,7 @@ table {
   text-decoration: none;
   display: block;
   text-align: left;
-}
+ }
 
 .dropdown-content a:hover {
   background-color: #ddd;
