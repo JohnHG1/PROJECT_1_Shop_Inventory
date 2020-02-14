@@ -85,7 +85,6 @@ main {
   padding-left: 25px;
 }
 
-
 .Rtable {
   display: flex;
   flex-wrap: wrap;
@@ -133,7 +132,6 @@ main {
 .retailcl {
   color: green;
 }
-
 
 .btn {
   border:0px none;
