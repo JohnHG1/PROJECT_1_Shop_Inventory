@@ -15,12 +15,19 @@
   <label for="retail">Retail:</label>
   <input id="retail" type="number" name="retail">
 
+  <label for="quantity">Quantity:</label>
+  <input id="quantity" type="number" name="quantity">
+<br>
+<br>
+<br>
   <label for="supplier-select">Supplier:</label>
   <select id="supplier-select" name="supplier_id">
     <% for supplier in @suppliers %>
       <option value="<%= supplier.id %>"><%= supplier.name %></option>
     <% end %>
   </select>
+  <br>
+  <br>
   <br>
   <br>
   <input class="btn btn--action" type='submit' value="Add New Car"/>

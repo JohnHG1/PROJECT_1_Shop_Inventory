@@ -18,8 +18,16 @@ h1, h2, h3, h4, h5, h6 {
   padding: 5px;
 }
 
+label {
+  font-family: 'Ariel', sans-serif;
+  margin: 1px;
+  padding: 1px;
+  font-size: 1.2em;
+
+
+}
 a {
-  font-size: 0.6em;
+  font-size: 0.8em;
 }
 
 a:hover {

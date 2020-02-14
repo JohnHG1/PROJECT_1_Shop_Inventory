@@ -1,15 +1,15 @@
 <h1>Products</h1>
-<a href="/products/new">
-<input class="btn btn--action" type='submit' value="Add New Car"/></a>
+
+<form action="/products/new" method="get">
+  <input class="btn btn--action" type='submit' value="Add New Car"/>
+</form>
 
 <div class="Rtable Rtable--4cols r-row">
-
   <% for product in @products %>
     <div class="Rtable-cell ffs r1-row"> <a href="/products/<%= product.id %>">
       <%= product.supplier.name %> </a></div>
       <div class="Rtable-cell ffs r1-row"><%= product.model %></div>
       <div class="Rtable-cell ffs r1-row retail"><%= product.retail %></div>
       <div class="Rtable-cell ffs r1-row">Qty: <%= product.quantity %></div>
-
   <% end %>
 </div>
