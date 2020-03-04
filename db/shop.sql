@@ -19,3 +19,9 @@ CREATE TABLE products
   supplier_id INT REFERENCES suppliers(id) ON DELETE CASCADE,
   quantity INT
 );
+
+-- T1
+--  psql -d shop -f db/shop.sql
+--  ruby db/seeds.rb
+-- T2  ruby app.rb
+-- localhost 4567

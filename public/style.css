@@ -27,7 +27,7 @@ label {
 
 }
 a {
-  font-size: 0.8em;
+  font-size: 0.5em;
 }
 
 a:hover {
@@ -63,7 +63,7 @@ h5 {
 nav {
   padding: 10px;
   margin: 10px;
-  padding-right: 25px;
+  padding-right: 5px;
 }
 
 li {
