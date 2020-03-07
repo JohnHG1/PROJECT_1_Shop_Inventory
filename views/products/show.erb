@@ -2,12 +2,17 @@
 <br>
 <h3><%= @product.description %></h3>
 <br>
-<h2><%= @product.colour.upcase %></h2>
-<br>
-<h2 class= "costcl"><%= @product.cost %></h2>
-<br>
-<h2 class= "retailcl"><%= @product.retail %></h2>
+<div class="container">
+  <div class="detail">
+    <h2><%= @product.colour.upcase %></h2>
+    <br>
+    <h2 class= "costcl"><%= @product.cost %></h2>
+    <br>
+    <h2 class= "retailcl"><%= @product.retail %></h2>
+  </div>
 
+  <img src="/images/SLK 200.jpg" alt="">
+  </div>
 <form action="/products/<%= @product.id %>/edit" method="get">
   <input class="btn btn--action" type='submit' value="Edit Car Details"/>
 </form>

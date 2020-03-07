@@ -222,3 +222,15 @@ main {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.container {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+
+.container img {
+  width: 300px;
+  height: auto;
+
+}
